@@ -1,10 +1,9 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { motion } from "framer-motion"
 import { toast } from "react-toastify"
 import ApperIcon from "@/components/ApperIcon"
 import Button from "@/components/atoms/Button"
 import Input from "@/components/atoms/Input"
-import Textarea from "@/components/atoms/Textarea"
 import videoService from "@/services/api/videoService"
 
 const UploadVideoModal = ({ section, onClose }) => {
@@ -19,7 +18,8 @@ const UploadVideoModal = ({ section, onClose }) => {
   
   const [curriculum, setCurriculum] = useState([{ title: "", url: "" }])
   const [loading, setLoading] = useState(false)
-
+  const [isHtmlMode, setIsHtmlMode] = useState(false)
+  const editorRef = useRef(null)
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
       ...prev,
@@ -34,6 +34,20 @@ const UploadVideoModal = ({ section, onClose }) => {
         ? prev.accessLevels.filter(l => l !== level)
         : [...prev.accessLevels, level]
     }))
+}
+
+  const handleRichTextCommand = (command, value = null) => {
+    if (editorRef.current && !isHtmlMode) {
+      document.execCommand(command, false, value)
+      editorRef.current.focus()
+    }
+  }
+
+  const handleDescriptionChange = () => {
+    if (editorRef.current) {
+      const content = isHtmlMode ? editorRef.current.textContent : editorRef.current.innerHTML
+      setFormData(prev => ({ ...prev, description: content }))
+    }
   }
 
   const addCurriculumItem = () => {
@@ -109,15 +123,84 @@ const UploadVideoModal = ({ section, onClose }) => {
               placeholder="이미지 URL (선택사항)"
             />
           </div>
-
-          <Textarea
-            label="설명"
-            rows={4}
-            value={formData.description}
-            onChange={(e) => handleInputChange("description", e.target.value)}
-            placeholder="동영상에 대한 설명을 입력하세요"
-          />
-
+{/* Rich Text Editor for Description */}
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <label className="block text-sm font-medium text-gray-700">설명</label>
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => setIsHtmlMode(!isHtmlMode)}
+              >
+                {isHtmlMode ? "비주얼" : "HTML"} 모드
+              </Button>
+            </div>
+            
+            {!isHtmlMode && (
+              <div className="editor-toolbar">
+                <button
+                  type="button"
+                  className="editor-button"
+                  onClick={() => handleRichTextCommand('bold')}
+                >
+                  <ApperIcon name="Bold" size={14} />
+                </button>
+                <button
+                  type="button"
+                  className="editor-button"
+                  onClick={() => handleRichTextCommand('italic')}
+                >
+                  <ApperIcon name="Italic" size={14} />
+                </button>
+                <button
+                  type="button"
+                  className="editor-button"
+                  onClick={() => handleRichTextCommand('underline')}
+                >
+                  <ApperIcon name="Underline" size={14} />
+                </button>
+                <button
+                  type="button"
+                  className="editor-button"
+                  onClick={() => {
+                    const url = prompt('링크 URL을 입력하세요:')
+                    if (url) handleRichTextCommand('createLink', url)
+                  }}
+                >
+                  <ApperIcon name="Link" size={14} />
+                </button>
+                <button
+                  type="button"
+                  className="editor-button"
+                  onClick={() => handleRichTextCommand('insertUnorderedList')}
+                >
+                  <ApperIcon name="List" size={14} />
+                </button>
+                <button
+                  type="button"
+                  className="editor-button"
+                  onClick={() => handleRichTextCommand('insertOrderedList')}
+                >
+                  <ApperIcon name="ListOrdered" size={14} />
+                </button>
+              </div>
+            )}
+            
+            <div
+              ref={editorRef}
+              className="editor-content"
+              contentEditable
+              suppressContentEditableWarning={true}
+              onInput={handleDescriptionChange}
+              style={{ 
+                whiteSpace: isHtmlMode ? 'pre-wrap' : 'normal',
+                fontFamily: isHtmlMode ? 'monospace' : 'inherit'
+              }}
+              dangerouslySetInnerHTML={{ __html: formData.description }}
+              data-placeholder="동영상에 대한 설명을 입력하세요"
+            />
+          </div>
           <Input
             label="동영상 URL/Embed Code"
             value={formData.videoUrl}
