@@ -1,0 +1,172 @@
+[
+  {
+    "Id": 1,
+    "title": "React 기초부터 실전까지",
+    "description": "React의 기본 개념부터 고급 패턴까지 체계적으로 학습하는 완벽한 강의입니다. 컴포넌트 설계, 상태 관리, 라이프사이클을 깊이 있게 다룹니다.",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    "videoUrl": "https://www.youtube.com/watch?v=dGcsHMXbSOA",
+    "curriculum": [
+      {
+        "title": "React 소개 및 환경설정",
+        "url": "https://www.youtube.com/watch?v=dGcsHMXbSOA"
+      },
+      {
+        "title": "컴포넌트와 JSX",
+        "url": "https://www.youtube.com/watch?v=Tn6-PIqc4UM"
+      },
+      {
+        "title": "Props와 State",
+        "url": "https://www.youtube.com/watch?v=4UZrsTqkcW4"
+      },
+      {
+        "title": "이벤트 처리",
+        "url": "https://www.youtube.com/watch?v=SqcY0GlETPk"
+      }
+    ],
+    "section": "membership",
+    "accessLevels": ["member", "both", "admin"],
+    "isPinned": true,
+    "createdAt": "2024-01-15T09:00:00.000Z"
+  },
+  {
+    "Id": 2,
+    "title": "JavaScript ES6+ 완벽 가이드",
+    "description": "모던 자바스크립트의 핵심 기능들을 마스터하여 효율적인 코드 작성법을 익혀보세요. 실무에서 바로 사용할 수 있는 패턴들을 소개합니다.",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    "videoUrl": "https://www.youtube.com/watch?v=NCwa_xi0Uuc",
+    "curriculum": [
+      {
+        "title": "let, const와 블록 스코프",
+        "url": "https://www.youtube.com/watch?v=NCwa_xi0Uuc"
+      },
+      {
+        "title": "화살표 함수와 this",
+        "url": "https://www.youtube.com/watch?v=h33Srr5J9nY"
+      },
+      {
+        "title": "구조 분해 할당",
+        "url": "https://www.youtube.com/watch?v=UgEaJBz3bjY"
+      }
+    ],
+    "section": "membership",
+    "accessLevels": ["free", "member", "both", "admin"],
+    "isPinned": false,
+    "createdAt": "2024-01-20T10:30:00.000Z"
+  },
+  {
+    "Id": 3,
+    "title": "고급 React 패턴 및 최적화",
+    "description": "React의 고급 패턴들과 성능 최적화 기법을 학습합니다. 실제 프로덕션 환경에서 사용되는 고급 기술들을 다룹니다.",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    "videoUrl": "https://www.youtube.com/watch?v=o6-s-7tCTfY",
+    "curriculum": [
+      {
+        "title": "React.memo와 useMemo",
+        "url": "https://www.youtube.com/watch?v=o6-s-7tCTfY"
+      },
+      {
+        "title": "Context API 고급 사용법",
+        "url": "https://www.youtube.com/watch?v=35lXWvCuM8o"
+      },
+      {
+        "title": "Custom Hooks 패턴",
+        "url": "https://www.youtube.com/watch?v=J-g9ZJha8FE"
+      },
+      {
+        "title": "렌더링 최적화 전략",
+        "url": "https://www.youtube.com/watch?v=B6JONHVTz8c"
+      }
+    ],
+    "section": "master",
+    "accessLevels": ["master", "both", "admin"],
+    "isPinned": true,
+    "createdAt": "2024-01-25T14:15:00.000Z"
+  },
+  {
+    "Id": 4,
+    "title": "Node.js 백엔드 개발 마스터",
+    "description": "Node.js를 이용한 풀스택 백엔드 개발을 마스터하세요. Express, MongoDB, 인증 시스템까지 모든 것을 다룹니다.",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    "videoUrl": "https://www.youtube.com/watch?v=f2EqECiTBL8",
+    "curriculum": [
+      {
+        "title": "Node.js 기초와 npm",
+        "url": "https://www.youtube.com/watch?v=f2EqECiTBL8"
+      },
+      {
+        "title": "Express 서버 구축",
+        "url": "https://www.youtube.com/watch?v=L72fhGm1tfE"
+      },
+      {
+        "title": "MongoDB 연동",
+        "url": "https://www.youtube.com/watch?v=fgTGADljAeg"
+      },
+      {
+        "title": "JWT 인증 시스템",
+        "url": "https://www.youtube.com/watch?v=mbsmsi7l3r4"
+      },
+      {
+        "title": "API 보안 및 테스팅",
+        "url": "https://www.youtube.com/watch?v=7YcW25PHnAA"
+      }
+    ],
+    "section": "master",
+    "accessLevels": ["master", "both", "admin"],
+    "isPinned": false,
+    "createdAt": "2024-02-01T11:00:00.000Z"
+  },
+  {
+    "Id": 5,
+    "title": "CSS Grid & Flexbox 완벽 가이드",
+    "description": "현대적인 CSS 레이아웃 기술인 Grid와 Flexbox를 완벽하게 마스터하여 반응형 웹 디자인을 구현해보세요.",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    "videoUrl": "https://www.youtube.com/watch?v=jV8B24rSN5o",
+    "curriculum": [
+      {
+        "title": "Flexbox 기초",
+        "url": "https://www.youtube.com/watch?v=jV8B24rSN5o"
+      },
+      {
+        "title": "CSS Grid 레이아웃",
+        "url": "https://www.youtube.com/watch?v=705XCEruZFs"
+      },
+      {
+        "title": "반응형 디자인 패턴",
+        "url": "https://www.youtube.com/watch?v=srvUrASNdxk"
+      }
+    ],
+    "section": "membership",
+    "accessLevels": ["free", "member", "both", "admin"],
+    "isPinned": false,
+    "createdAt": "2024-02-05T16:20:00.000Z"
+  },
+  {
+    "Id": 6,
+    "title": "TypeScript 실전 활용법",
+    "description": "TypeScript의 고급 타입 시스템과 실무 활용법을 익혀 안전하고 확장가능한 코드를 작성하는 방법을 학습합니다.",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    "videoUrl": "https://www.youtube.com/watch?v=BwuLxPH8IDs",
+    "curriculum": [
+      {
+        "title": "TypeScript 기초 문법",
+        "url": "https://www.youtube.com/watch?v=BwuLxPH8IDs"
+      },
+      {
+        "title": "고급 타입과 제네릭",
+        "url": "https://www.youtube.com/watch?v=VzYNqvAJ0g0"
+      },
+      {
+        "title": "React와 TypeScript",
+        "url": "https://www.youtube.com/watch?v=Z5iWr6Srsj8"
+      },
+      {
+        "title": "실무 프로젝트 적용",
+        "url": "https://www.youtube.com/watch?v=nViEqpgwxHI"
+      }
+    ],
+    "section": "master",
+    "accessLevels": ["master", "both", "admin"],
+    "isPinned": false,
+    "createdAt": "2024-02-10T13:45:00.000Z"
+  }
+]
