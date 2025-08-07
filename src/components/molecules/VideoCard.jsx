@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import ApperIcon from "@/components/ApperIcon";
 import Badge from "@/components/atoms/Badge";
 import Button from "@/components/atoms/Button";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import React from "react";
 
 const VideoCard = ({ video, currentUser, onEdit, showControls = true }) => {
